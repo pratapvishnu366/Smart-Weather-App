@@ -25,7 +25,7 @@ app.get('/api/weather', async (req, res) => {
 
   const apiKey = process.env.OPENWEATHER_API_KEY;
   if (!apiKey) {
-    return res.status(500).json({ error: 'OpenWeather API key is not configured in backend/.env' });
+    return res.status(500).json({ error: 'OpenWeather API key is not configured in .env' });
   }
 
   try {
