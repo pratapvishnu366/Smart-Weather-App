@@ -4,9 +4,8 @@ import { CloudSun, Search, AlertCircle, Loader2 } from 'lucide-react';
 import MainWeatherCard from './MainWeatherCard';
 import WeatherHighlights from './WeatherHighlights';
 
-const API_BASE_URL = import.meta.env.DEV
-  ? (import.meta.env.VITE_API_URL || 'http://localhost:5001/api')
-  : '/api';
+const rawApiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5001/api';
+const API_BASE_URL = rawApiUrl.endsWith('/api') ? rawApiUrl : `${rawApiUrl}/api`;
 const POPULAR_CITIES = ['New Delhi', 'London', 'Tokyo', 'New York', 'Paris', 'Dubai'];
 
 function Dashboard() {
